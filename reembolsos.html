@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de reembolsos · Insula</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A30">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--abismo:#0E2A30;--laguna:#1FA88E;--lagunap:#0B6E5D;--niebla:#EEF2EE;--basalto:#15191B;--muted:#4B5D5F;--line:#CBD6D4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--niebla);color:var(--basalto);font:400 17px/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--lagunap)}
+:focus-visible{outline:3px solid var(--laguna);outline-offset:3px;border-radius:4px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:860px;margin:0 auto;padding:22px 20px}
+header a.logo img{height:30px;display:block}
+.langs{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.langs button{font:600 13px/1 inherit;font-family:inherit;border:0;background:none;color:var(--muted);padding:7px 9px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--abismo);color:var(--niebla)}
+main{max-width:860px;margin:0 auto;padding:24px 20px 72px}
+h1{font:400 clamp(36px,6vw,58px)/1.05 "Newsreader",Georgia,serif;color:var(--abismo);margin:20px 0 10px;letter-spacing:-.015em}
+.up{font-size:14px;color:var(--muted);margin:0 0 28px}
+main p{max-width:68ch;margin:0 0 16px}
+main b{color:var(--abismo)}
+.ref{font-size:14px;color:var(--muted)}
+.back{display:inline-block;margin-top:24px;font-weight:600}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,36px)}
+footer{max-width:860px;margin:0 auto;padding:0 20px 40px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body class="pg-reembolsos">
+<header><a class="logo" href="./" aria-label="Insula"><img src="logo.svg" alt="Insula"></a>
+<div class="langs" role="group" aria-label="Idioma"><button data-l="es">ES</button><button data-l="en">EN</button><button data-l="pt">PT</button><button data-l="fr">FR</button></div></header>
+<main><div class="card"><h1 id="t"></h1><p class="up" id="up"></p><div id="body"></div><a class="back" id="back" href="./"></a></div></main>
+<footer>© 2026 Insula · <a id="mail" href="#"></a></footer>
+<script src="config.js"></script>
+<script>
+const D={"es": {"t": "Política de reembolsos", "p": ["**Garantía de instalación.** Si después del diagnóstico vemos que tu equipo no puede ejecutar Insula, o si no logramos completar la instalación, te devolvemos el 100% del pago de Starter.", "**Antes de instalar.** Puedes cancelar y recibir el 100% del reembolso en cualquier momento antes de que comience la instalación.", "**Después de instalar.** Tienes 7 días para avisarnos si el asistente no funciona como se mostró en la demo. Lo corregimos, y si no podemos, te devolvemos el pago.", "**Suscripciones.** Puedes cancelar cuando quieras; no cobramos el mes siguiente. Los meses ya pagados no se reembolsan.", "**Cómo pedirlo.** Escribe a {email} con tu número de pedido. Procesamos el reembolso a través de Polar en un plazo de 5 días hábiles; el tiempo en que aparece en tu tarjeta depende de tu banco."], "up": "Actualizado: 16 de noviembre de 2026", "back": "← Volver al inicio"}, "en": {"t": "Refund policy", "p": ["**Installation guarantee.** If the assessment shows your machine can’t run Insula, or we can’t complete the installation, we refund 100% of the Starter payment.", "**Before installation.** You can cancel and get a 100% refund at any time before installation starts.", "**After installation.** You have 7 days to tell us if the assistant doesn’t work as shown in the demo. We fix it, and if we can’t, we refund you.", "**Subscriptions.** Cancel anytime; you won’t be charged the next month. Months already paid aren’t refunded.", "**How to request.** Email {email} with your order number. We process refunds through Polar within 5 business days; when it shows on your card depends on your bank."], "up": "Last updated: November 16, 2026", "back": "← Back to home"}, "pt": {"t": "Política de reembolso", "p": ["**Garantia de implantação.** Se o diagnóstico mostrar que seu equipamento não roda a Insula, ou se não conseguirmos concluir a implantação, devolvemos 100% do pagamento do Starter.", "**Antes da implantação.** Você pode cancelar e receber 100% de reembolso a qualquer momento antes do início da implantação.", "**Depois da implantação.** Você tem 7 dias para nos avisar se o assistente não funcionar como na demo. Corrigimos, e se não for possível, devolvemos o valor.", "**Assinaturas.** Cancele quando quiser; o mês seguinte não é cobrado. Meses já pagos não são reembolsados.", "**Como pedir.** Escreva para {email} com o número do pedido. Processamos o reembolso pela Polar em até 5 dias úteis; o prazo no cartão depende do seu banco."], "up": "Atualizado em 16 de novembro de 2026", "back": "← Voltar ao início"}, "fr": {"t": "Politique de remboursement", "p": ["**Garantie d’installation.** Si le diagnostic montre que votre machine ne peut pas faire tourner Insula, ou si nous ne parvenons pas à terminer l’installation, nous remboursons 100 % du paiement Starter.", "**Avant l’installation.** Vous pouvez annuler et être remboursé à 100 % à tout moment avant le début de l’installation.", "**Après l’installation.** Vous avez 7 jours pour nous signaler que l’assistant ne fonctionne pas comme lors de la démo. Nous corrigeons, et à défaut, nous vous remboursons.", "**Abonnements.** Résiliables à tout moment ; le mois suivant n’est pas facturé. Les mois déjà payés ne sont pas remboursés.", "**Comment demander.** Écrivez à {email} avec votre numéro de commande. Nous traitons le remboursement via Polar sous 5 jours ouvrés ; le délai sur votre carte dépend de votre banque."], "up": "Mis à jour le 16 novembre 2026", "back": "← Retour à l’accueil"}};
+const C=window.INSULA_CONFIG||{};const EMAIL=C.contactEmail||"manyosa@limly.io";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function setLang(l){if(!D[l])l='es';const d=D[l];document.documentElement.lang=l;
+ let ref='';try{const id=new URLSearchParams(location.search).get('checkout_id');if(id)ref='<br><span class="ref">'+(l==='en'?'Order':l==='fr'?'Commande':l==='pt'?'Pedido':'Pedido')+': '+esc(id)+'</span>'}catch(e){}
+ document.getElementById('t').textContent=d.t;document.title=d.t+' · Insula';
+ const up=document.getElementById('up');up.textContent=d.up;up.hidden=!d.up;
+ document.getElementById('body').innerHTML=d.p.map(x=>'<p>'+esc(x).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace('{email}','<a href="mailto:'+esc(EMAIL)+'">'+esc(EMAIL)+'</a>').replace('{ref}',ref)+'</p>').join('');
+ document.getElementById('back').textContent=d.back;
+ document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ try{localStorage.setItem('insula-lang',l)}catch(e){}
+ document.querySelectorAll('a[href="./"]').forEach(a=>a.href='./#'+l);
+}
+const m=document.getElementById('mail');m.href='mailto:'+EMAIL;m.textContent=EMAIL;
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let s=null;try{s=new URLSearchParams(location.search).get('lang')}catch(e){}
+if(!D[s]){try{s=localStorage.getItem('insula-lang')}catch(e){}}
+if(!D[s]){const n=(navigator.language||'es').slice(0,2);s=D[n]?n:'es'}
+setLang(s);
+</script>
+</body>
+</html>

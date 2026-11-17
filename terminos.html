@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Términos del servicio · Insula</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A30">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--abismo:#0E2A30;--laguna:#1FA88E;--lagunap:#0B6E5D;--niebla:#EEF2EE;--basalto:#15191B;--muted:#4B5D5F;--line:#CBD6D4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--niebla);color:var(--basalto);font:400 17px/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--lagunap)}
+:focus-visible{outline:3px solid var(--laguna);outline-offset:3px;border-radius:4px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:860px;margin:0 auto;padding:22px 20px}
+header a.logo img{height:30px;display:block}
+.langs{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.langs button{font:600 13px/1 inherit;font-family:inherit;border:0;background:none;color:var(--muted);padding:7px 9px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--abismo);color:var(--niebla)}
+main{max-width:860px;margin:0 auto;padding:24px 20px 72px}
+h1{font:400 clamp(36px,6vw,58px)/1.05 "Newsreader",Georgia,serif;color:var(--abismo);margin:20px 0 10px;letter-spacing:-.015em}
+.up{font-size:14px;color:var(--muted);margin:0 0 28px}
+main p{max-width:68ch;margin:0 0 16px}
+main b{color:var(--abismo)}
+.ref{font-size:14px;color:var(--muted)}
+.back{display:inline-block;margin-top:24px;font-weight:600}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,36px)}
+footer{max-width:860px;margin:0 auto;padding:0 20px 40px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body class="pg-terminos">
+<header><a class="logo" href="./" aria-label="Insula"><img src="logo.svg" alt="Insula"></a>
+<div class="langs" role="group" aria-label="Idioma"><button data-l="es">ES</button><button data-l="en">EN</button><button data-l="pt">PT</button><button data-l="fr">FR</button></div></header>
+<main><div class="card"><h1 id="t"></h1><p class="up" id="up"></p><div id="body"></div><a class="back" id="back" href="./"></a></div></main>
+<footer>© 2026 Insula · <a id="mail" href="#"></a></footer>
+<script src="config.js"></script>
+<script>
+const D={"es": {"t": "Términos del servicio", "p": ["Al contratar Insula aceptas estos términos.", "**1. El servicio.** Insula instala y configura un asistente de IA privado en un equipo del cliente, usando modelos abiertos con licencia comercial. Starter incluye instalación remota, 1 hora de capacitación, guía de seguridad y 30 días de soporte. Las actualizaciones mensuales son opcionales.", "**2. Requisitos del cliente.** El cliente aporta el equipo (recomendado: 16 GB de RAM o más), el acceso remoto temporal durante la instalación y los documentos que desee consultar. El cliente es responsable de tener derecho a usar esos documentos.", "**3. Confidencialidad.** Firmamos un acuerdo de confidencialidad antes de la instalación. El acceso remoto se cierra al terminar.", "**4. Uso de las respuestas.** El asistente es una herramienta de búsqueda y resumen que cita sus fuentes. Puede cometer errores: las decisiones legales, médicas o financieras siguen siendo responsabilidad del profesional.", "**5. Seguridad.** Instalamos con buenas prácticas, pero ningún sistema es invulnerable. La seguridad física y lógica del equipo (cifrado, contraseñas, copias de respaldo) es responsabilidad del cliente.", "**6. Pagos.** Los pagos se procesan a través de Polar (polar.sh), que actúa como comerciante registrado y emite el comprobante con los impuestos que correspondan. Las suscripciones se pueden cancelar en cualquier momento y no se renuevan después de cancelarlas.", "**7. Responsabilidad.** Nuestra responsabilidad total se limita al importe pagado en los 12 meses anteriores al reclamo.", "**8. Contacto.** {email}"], "up": "Actualizado: 16 de noviembre de 2026", "back": "← Volver al inicio"}, "en": {"t": "Terms of service", "p": ["By purchasing Insula you agree to these terms.", "**1. The service.** Insula installs and configures a private AI assistant on the client’s hardware, using open models with commercial licenses. Starter includes remote installation, 1-hour training, a security guide and 30 days of support. Monthly updates are optional.", "**2. Client requirements.** The client provides the hardware (recommended: 16 GB of RAM or more), temporary remote access during installation and the documents to query, and is responsible for having the right to use them.", "**3. Confidentiality.** We sign an NDA before installation. Remote access is closed when we finish.", "**4. Use of answers.** The assistant is a search and summarization tool that cites its sources. It can make mistakes: legal, medical or financial decisions remain the professional’s responsibility.", "**5. Security.** We follow good practices, but no system is invulnerable. Physical and logical security of the machine (encryption, passwords, backups) is the client’s responsibility.", "**6. Payments.** Payments are processed by Polar (polar.sh), acting as merchant of record and issuing the receipt with applicable taxes. Subscriptions can be cancelled at any time and won’t renew after cancellation.", "**7. Liability.** Our total liability is limited to the amount paid in the 12 months before the claim.", "**8. Contact.** {email}"], "up": "Last updated: November 16, 2026", "back": "← Back to home"}, "pt": {"t": "Termos de serviço", "p": ["Ao contratar a Insula você aceita estes termos.", "**1. O serviço.** A Insula instala e configura um assistente de IA privado no equipamento do cliente, com modelos abertos de licença comercial. O Starter inclui implantação remota, 1 hora de treinamento, guia de segurança e 30 dias de suporte. As atualizações mensais são opcionais.", "**2. Requisitos do cliente.** O cliente fornece o equipamento (recomendado: 16 GB de RAM ou mais), acesso remoto temporário durante a implantação e os documentos a consultar, sendo responsável por ter direito de usá-los.", "**3. Confidencialidade.** Assinamos um acordo de confidencialidade antes da implantação. O acesso remoto é encerrado ao final.", "**4. Uso das respostas.** O assistente é uma ferramenta de busca e resumo que cita as fontes. Pode errar: decisões jurídicas, médicas ou financeiras continuam sendo responsabilidade do profissional.", "**5. Segurança.** Seguimos boas práticas, mas nenhum sistema é invulnerável. A segurança física e lógica do equipamento (criptografia, senhas, backups) é responsabilidade do cliente.", "**6. Pagamentos.** Processados pela Polar (polar.sh), que atua como merchant of record e emite o comprovante com os impostos aplicáveis. As assinaturas podem ser canceladas a qualquer momento e não renovam após o cancelamento.", "**7. Responsabilidade.** Nossa responsabilidade total se limita ao valor pago nos 12 meses anteriores à reclamação.", "**8. Contato.** {email}"], "up": "Atualizado em 16 de novembro de 2026", "back": "← Voltar ao início"}, "fr": {"t": "Conditions d’utilisation", "p": ["En achetant Insula, vous acceptez ces conditions.", "**1. Le service.** Insula installe et configure un assistant IA privé sur le matériel du client, avec des modèles ouverts sous licence commerciale. Starter comprend l’installation à distance, une formation d’une heure, un guide de sécurité et 30 jours de support. Les mises à jour mensuelles sont optionnelles.", "**2. Obligations du client.** Le client fournit le matériel (recommandé : 16 Go de RAM ou plus), un accès à distance temporaire pendant l’installation et les documents à interroger, et doit disposer des droits nécessaires sur ceux-ci.", "**3. Confidentialité.** Nous signons un accord de confidentialité avant l’installation. L’accès à distance est fermé à la fin.", "**4. Utilisation des réponses.** L’assistant est un outil de recherche et de synthèse qui cite ses sources. Il peut se tromper : les décisions juridiques, médicales ou financières restent de la responsabilité du professionnel.", "**5. Sécurité.** Nous appliquons les bonnes pratiques, mais aucun système n’est invulnérable. La sécurité physique et logique de la machine (chiffrement, mots de passe, sauvegardes) incombe au client.", "**6. Paiements.** Traités par Polar (polar.sh), marchand officiel qui émet le reçu avec les taxes applicables. Les abonnements sont résiliables à tout moment et ne sont pas renouvelés après résiliation.", "**7. Responsabilité.** Notre responsabilité totale est limitée au montant payé au cours des 12 mois précédant la réclamation.", "**8. Contact.** {email}"], "up": "Mis à jour le 16 novembre 2026", "back": "← Retour à l’accueil"}};
+const C=window.INSULA_CONFIG||{};const EMAIL=C.contactEmail||"manyosa@limly.io";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function setLang(l){if(!D[l])l='es';const d=D[l];document.documentElement.lang=l;
+ let ref='';try{const id=new URLSearchParams(location.search).get('checkout_id');if(id)ref='<br><span class="ref">'+(l==='en'?'Order':l==='fr'?'Commande':l==='pt'?'Pedido':'Pedido')+': '+esc(id)+'</span>'}catch(e){}
+ document.getElementById('t').textContent=d.t;document.title=d.t+' · Insula';
+ const up=document.getElementById('up');up.textContent=d.up;up.hidden=!d.up;
+ document.getElementById('body').innerHTML=d.p.map(x=>'<p>'+esc(x).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace('{email}','<a href="mailto:'+esc(EMAIL)+'">'+esc(EMAIL)+'</a>').replace('{ref}',ref)+'</p>').join('');
+ document.getElementById('back').textContent=d.back;
+ document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ try{localStorage.setItem('insula-lang',l)}catch(e){}
+ document.querySelectorAll('a[href="./"]').forEach(a=>a.href='./#'+l);
+}
+const m=document.getElementById('mail');m.href='mailto:'+EMAIL;m.textContent=EMAIL;
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let s=null;try{s=new URLSearchParams(location.search).get('lang')}catch(e){}
+if(!D[s]){try{s=localStorage.getItem('insula-lang')}catch(e){}}
+if(!D[s]){const n=(navigator.language||'es').slice(0,2);s=D[n]?n:'es'}
+setLang(s);
+</script>
+</body>
+</html>

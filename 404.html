@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Página no encontrada · Insula</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A30">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--abismo:#0E2A30;--laguna:#1FA88E;--lagunap:#0B6E5D;--niebla:#EEF2EE;--basalto:#15191B;--muted:#4B5D5F;--line:#CBD6D4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--niebla);color:var(--basalto);font:400 17px/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--lagunap)}
+:focus-visible{outline:3px solid var(--laguna);outline-offset:3px;border-radius:4px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:860px;margin:0 auto;padding:22px 20px}
+header a.logo img{height:30px;display:block}
+.langs{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.langs button{font:600 13px/1 inherit;font-family:inherit;border:0;background:none;color:var(--muted);padding:7px 9px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--abismo);color:var(--niebla)}
+main{max-width:860px;margin:0 auto;padding:24px 20px 72px}
+h1{font:400 clamp(36px,6vw,58px)/1.05 "Newsreader",Georgia,serif;color:var(--abismo);margin:20px 0 10px;letter-spacing:-.015em}
+.up{font-size:14px;color:var(--muted);margin:0 0 28px}
+main p{max-width:68ch;margin:0 0 16px}
+main b{color:var(--abismo)}
+.ref{font-size:14px;color:var(--muted)}
+.back{display:inline-block;margin-top:24px;font-weight:600}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,36px)}
+footer{max-width:860px;margin:0 auto;padding:0 20px 40px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body class="pg-404">
+<header><a class="logo" href="./" aria-label="Insula"><img src="logo.svg" alt="Insula"></a>
+<div class="langs" role="group" aria-label="Idioma"><button data-l="es">ES</button><button data-l="en">EN</button><button data-l="pt">PT</button><button data-l="fr">FR</button></div></header>
+<main><div class="card"><h1 id="t"></h1><p class="up" id="up"></p><div id="body"></div><a class="back" id="back" href="./"></a></div></main>
+<footer>© 2026 Insula · <a id="mail" href="#"></a></footer>
+<script src="config.js"></script>
+<script>
+const D={"es": {"t": "Página no encontrada", "p": ["La página que buscas no existe o cambió de dirección."], "up": "", "back": "← Volver al inicio"}, "en": {"t": "Page not found", "p": ["The page you’re looking for doesn’t exist or has moved."], "up": "", "back": "← Back to home"}, "pt": {"t": "Página não encontrada", "p": ["A página que você procura não existe ou mudou de endereço."], "up": "", "back": "← Voltar ao início"}, "fr": {"t": "Page introuvable", "p": ["La page que vous cherchez n’existe pas ou a été déplacée."], "up": "", "back": "← Retour à l’accueil"}};
+const C=window.INSULA_CONFIG||{};const EMAIL=C.contactEmail||"manyosa@limly.io";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function setLang(l){if(!D[l])l='es';const d=D[l];document.documentElement.lang=l;
+ let ref='';try{const id=new URLSearchParams(location.search).get('checkout_id');if(id)ref='<br><span class="ref">'+(l==='en'?'Order':l==='fr'?'Commande':l==='pt'?'Pedido':'Pedido')+': '+esc(id)+'</span>'}catch(e){}
+ document.getElementById('t').textContent=d.t;document.title=d.t+' · Insula';
+ const up=document.getElementById('up');up.textContent=d.up;up.hidden=!d.up;
+ document.getElementById('body').innerHTML=d.p.map(x=>'<p>'+esc(x).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace('{email}','<a href="mailto:'+esc(EMAIL)+'">'+esc(EMAIL)+'</a>').replace('{ref}',ref)+'</p>').join('');
+ document.getElementById('back').textContent=d.back;
+ document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ try{localStorage.setItem('insula-lang',l)}catch(e){}
+ document.querySelectorAll('a[href="./"]').forEach(a=>a.href='./#'+l);
+}
+const m=document.getElementById('mail');m.href='mailto:'+EMAIL;m.textContent=EMAIL;
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let s=null;try{s=new URLSearchParams(location.search).get('lang')}catch(e){}
+if(!D[s]){try{s=localStorage.getItem('insula-lang')}catch(e){}}
+if(!D[s]){const n=(navigator.language||'es').slice(0,2);s=D[n]?n:'es'}
+setLang(s);
+</script>
+</body>
+</html>
